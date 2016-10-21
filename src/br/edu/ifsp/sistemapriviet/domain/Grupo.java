@@ -7,11 +7,11 @@ import java.util.List;
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: Promocao
+ * Entity implementation class for Entity: Grupo
  *
  */
 @Entity
-public class Promocao implements Serializable {
+public class Grupo implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -22,25 +22,19 @@ public class Promocao implements Serializable {
 	private String nome;
 	
 	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-	private List<Produto> produtos = new ArrayList<Produto>();
-	
-	private double total;
-	
-	private boolean ativo;
+	private List<Funcionalidade> func = new ArrayList<>();
 	
 	/*______________________________________________________*/
 
-	public Promocao() {
+	public Grupo() {
 		super();
-	}
-	
-	public Promocao(String nome, double total, boolean ativo) {
-		super();
-		this.nome = nome;
-		this.total = total;
-		this.ativo = ativo;
 	}
 
+	public Grupo(String nome) {
+		super();
+		this.nome = nome;
+	}
+	
 	/*______________________________________________________*/
 
 	public String getNome() {
@@ -51,31 +45,14 @@ public class Promocao implements Serializable {
 		this.nome = nome;
 	}
 
-	public double getTotal() {
-		return total;
+	public List<Funcionalidade> getFunc() {
+		return func;
 	}
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
-
-	public boolean isAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
-	}
-
-	public List<Produto> getProdutos() {
-		return produtos;
-	}	
 	
 	/*______________________________________________________*/
 	
-	public void addProtudo(Produto produto){
-		this.produtos.add(produto);
-		produto.getPromocoes().add(this);
+	public void addFuncionalidade(Funcionalidade func){
+		this.func.add(func);
+		func.getGrupos().add(this);
 	}
-   
 }

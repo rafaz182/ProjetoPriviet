@@ -54,6 +54,8 @@ public class Filme implements Serializable {
 	
 	@OneToMany(cascade = CascadeType.PERSIST, mappedBy = "filme")
 	private List<Sessao> sessoes = new ArrayList<>();	
+	
+	/*______________________________________________________*/
 
 	public Filme() {
 		super();
@@ -75,6 +77,8 @@ public class Filme implements Serializable {
 		this.classificacao = classificacao;
 	}
 
+	/*______________________________________________________*/
+	
 	public String getTituloPortugues() {
 		return tituloPortugues;
 	}
@@ -166,10 +170,8 @@ public class Filme implements Serializable {
 	private List<Sessao> getSessoes() {
 		return sessoes;
 	}
-
-	private void setSessoes(List<Sessao> sessoes) {
-		this.sessoes = sessoes;
-	}
+	
+	/*______________________________________________________*/
 	
 	public void addSessoes(Sessao sessao){
 		this.getSessoes().add(sessao);

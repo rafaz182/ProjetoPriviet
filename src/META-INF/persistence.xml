@@ -5,6 +5,14 @@
 		<class>br.edu.ifsp.sistemapriviet.domain.Sessao</class>
 		<class>br.edu.ifsp.sistemapriviet.domain.Sala</class>
 		<class>br.edu.ifsp.sistemapriviet.domain.Ingresso</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.Funcionalidade</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.Grupo</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.Item</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.Produto</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.Promocao</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.Usuario</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.VendaDeIngresso</class>
+		<class>br.edu.ifsp.sistemapriviet.domain.VendaDeProduto</class>
 		<properties>
 			<property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/projetopriviet"/>
